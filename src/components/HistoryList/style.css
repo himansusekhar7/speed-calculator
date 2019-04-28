@@ -1,0 +1,9 @@
+.history-section ul,
+.history-section li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.history-section li {
+  margin: 0.25rem 0;
+}
