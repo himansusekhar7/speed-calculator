@@ -1,0 +1,12 @@
+.text-input-container {
+  width: 100%;
+}
+
+.text-input-container label {
+  display: flex;
+  width: 100%;
+}
+
+.text-input-container-unit {
+  margin-left: 0.25rem;
+}
