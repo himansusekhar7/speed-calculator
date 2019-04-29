@@ -1,18 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './style.css';
+import './style.scss';
 
-const HistoryList = ({speedList, listLimit}) => {
-
-  const list = speedList.map((sl, counter) => {
-
-    return (++counter <= listLimit) &&(
-      <li>${sl.distance} / ${sl.time} = ${sl.distance/sl.time} mph</li>
-    );
+const HistoryList = ({speedList}) => {
+  const list = speedList && speedList.map((sl, index) => {
+    return <li key={`speedList-${index}`}>{sl.distance} / {sl.time} = {sl.speed} mph</li>
   });
 
-  return speedList && (
+  return (
     <ul className="history-list">
       {list}
     </ul>
@@ -20,15 +16,13 @@ const HistoryList = ({speedList, listLimit}) => {
 };
 
 HistoryList.propTypes = {
-  speedList: PropTypes.arrayOf({
-    distance: PropTypes.number,
-    time: PropTypes.number
-  }),
-  listLimit: PropTypes.number
-};
-
-HistoryList.defaultProps = {
-  listLimit: 5
+  speedList: PropTypes.arrayOf(
+    PropTypes.shape({
+      distance: PropTypes.number,
+      time: PropTypes.number,
+      speed: PropTypes.number
+    })
+  )
 };
 
 export default HistoryList;
