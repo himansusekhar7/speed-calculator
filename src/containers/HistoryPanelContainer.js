@@ -1,21 +1,15 @@
 import { connect } from 'react-redux';
 import HistoryPanel from '../components/HistoryPanel';
-import { displayFilters } from '../actions';
 
-const getList = (calcList, filter) => {
-  switch (filter) {
-    case displayFilters.SHOW_LAST_FIVE:
-    return calcList.reverse().filter((item, index) => index < 5);
-    case displayFilters.SHOW_ALL:
-    default:
-      return calcList;
-  }
+const getLastFiveList = (speedList) => {
+  return speedList.reverse().filter((item, index) => index < 5);
 }
 
 const mapStateToProps = state => ({
-  calcList: getList(state.calcList, state.displayFilters)
+  speedList: getLastFiveList(state.speedList)
 });
 
-export default connect(
-  mapStateToProps
-)(HistoryPanel);
+
+const HistoryPanelContainer = connect(mapStateToProps) (HistoryPanel);
+
+export default HistoryPanelContainer;

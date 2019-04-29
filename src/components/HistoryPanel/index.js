@@ -7,35 +7,24 @@ import './style.scss';
 
 const HistoryPanel = ({sectionHeaderText, speedList}) => (
   <div className="history-panel">
-    <SectionHeader
-      text={sectionHeaderText}
-    />
-    <HistoryList
-      speedList={speedList}
-    />
+    <SectionHeader text={sectionHeaderText} />
+    <HistoryList speedList={speedList} />
   </div>
 );
 
 HistoryPanel.prototypes = {
   sectionHeaderText: PropTypes.string,
-  speedList: PropTypes.arrayOf(PropTypes.shape({
-    distance: PropTypes.number,
-    time: PropTypes.number,
-    speed: PropTypes.number
-  }))
+  speedList: PropTypes.arrayOf(
+    PropTypes.shape({
+      distance: PropTypes.number,
+      time: PropTypes.number,
+      speed: PropTypes.number
+    })
+  )
 };
 
 HistoryPanel.defaultProps = {
-  sectionHeaderText: 'History',
-  speedList: [
-    {distance: 60, time: 1},
-    {distance: 60, time: 2},
-    {distance: 60, time: 3},
-    {distance: 60, time: 4},
-    {distance: 60, time: 5},
-    {distance: 60, time: 6},
-    {distance: 60, time: 7}
-  ]
+  sectionHeaderText: 'History'
 };
 
 export default HistoryPanel;

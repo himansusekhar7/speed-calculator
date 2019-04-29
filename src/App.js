@@ -1,11 +1,11 @@
 import React from 'react';
-import CalculatorPanel from './components/CalculatorPanel';
+import CalculatorPanelContainer from './containers/CalculatorPanelContainer';
 import HistoryPanelContainer from './containers/HistoryPanelContainer';
 
 function App() {
   return (
     <div className="main-app">
-      <CalculatorPanel />
+      <CalculatorPanelContainer />
       <HistoryPanelContainer />
     </div>
   );

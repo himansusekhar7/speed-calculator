@@ -1,8 +1,16 @@
-import { combineReducers } from 'redux';
-import calcList from './calcList';
-import calcDisplayFilter from './calcDisplayFilter';
+import { SAVE_DATA } from '../actions';
 
-export default combineReducers({
-  calcList,
-  calcDisplayFilter
-});
+const initialState = {
+  speedList: []
+};
+
+const rootReducer = (state = initialState, action) => {
+  if (action.type === SAVE_DATA) {
+    return Object.assign({}, state, {
+      speedList: state.speedList.concat(action.payload)
+    });
+  }
+  return state;
+};
+
+export default rootReducer;

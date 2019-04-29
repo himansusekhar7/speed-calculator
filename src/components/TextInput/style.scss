@@ -1,0 +1,22 @@
+.text-input-container {
+  width: 100%;
+
+  &.invalid {
+    input {
+      border-color: #ff0000;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  label {
+    display: flex;
+    width: 100%;
+  }
+
+  &--unit {
+    margin-left: 0.25rem;
+  }
+}

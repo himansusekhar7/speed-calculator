@@ -1,15 +1,8 @@
-export const saveData = (distance, time) => ({
-  type: 'SAVE_DATA',
-  distance,
-  time
-});
+// Action Types
+export const SAVE_DATA = 'SAVE_DATA';
 
-export const setDisplayFilter = (filter) => ({
-  type: 'SET_DISPLAY_FILTER',
-  filter
+// Actions Creators
+export const saveData = (payload) => ({
+  type: SAVE_DATA,
+  payload
 });
-
-export const displayFilters = {
-  SHOW_LAST_FIVE: 'SHOW_LAST_FIVE',
-  SHOW_ALL: 'SHOW_ALL'
-};
